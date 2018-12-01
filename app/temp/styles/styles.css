@@ -348,7 +348,9 @@ body {
 
 img {
     max-width: 100%;
+    /* 아무처리도 하지 않은 그림 크기 그대로의 사이즈가 화면에 표시돼있었기 때문에 최대 너비를 설정해 주었다. */
     height: auto;
+    display: block;
 }
 
 * {
@@ -454,6 +456,10 @@ a {
     padding-left: 18px;
     padding-right: 18px;
     max-width: 1236px;
+    /*
+    모든 요소에 box-sizing: border-box;를 적용해 줬기 때문에,
+    패딩값 18px+18px을 해준 값을 더해서 1236px이 됐다.
+    */
     margin: 0 auto;
     overflow: hidden;
 }
@@ -468,19 +474,19 @@ a {
     }
 
 .wrapper--b-margin {
+        border: 1px solid navy;
         margin-bottom: 1rem;
-
     }
 
 @media (min-width: 530px){
 
 .wrapper--b-margin {
             margin-bottom: 3.875rem
-
     }
     }
 
 .page-section {
+    border: 1px solid red;
     padding: 1.2rem 0;
 }
 
@@ -564,12 +570,20 @@ a {
         margin-right: -65px;
     }
 
+.row--gutters-large{
+        margin-right: -100px;
+    }
+
 .row--gutters > div {
         padding-right: 65px;
     }
 
+.row--gutters-large > div {
+        padding-right: 100px;
+    }
+
 .row__b-margin-until-medium{
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
     }
 
 @media (min-width: 800px){
@@ -580,21 +594,28 @@ a {
             float: left;
             width: 33.33%;
         }
+
+        .row__medium-4--larger {
+            width: 37%;
+        }
+        .row__medium-6{
+            float: left;
+            width: 50%;
+        }
         .row__medium-8{
             float: left;
             width: 66.66%;
         }
-        .row__medium-4--larger {
-            width: 37%;
-        }
+
         .row__medium-8--smaller {
             width: 63%;
         }
     }
 
 .generic-content-container p {
+        font-weight: 300;
         line-height: 1.65;
-        margin: 1.8rem 0;
+        margin: 0 0 1.8rem 0;
     }
 
 @media (min-width: 530px){
@@ -608,86 +629,155 @@ a {
         font-weight: 700;
     }
 
+/* DO NOT edit modules/_sprite directly as it is generated automatically by Gulp. Instead edit gulp/templates/sprite */
+
+.icon {
+            background-image: url('/assets/images/sprites/sprite-d675eadb.svg');
+    }
+
 .icon--clear-view-escapes {
         width: 142.4px;
         height: 59.53px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 0 0
     }
 
 .icon--comment {
         width: 64px;
         height: 64px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 99.70443349753694% 0
     }
 
 .icon--facebook {
         width: 21.23px;
         height: 42.01px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 26.040607071652357% 45.795830448496034%
     }
 
 .icon--fire {
         width: 56px;
         height: 64px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 0 99.56481481481481%
     }
 
 .icon--globe {
         width: 64px;
         height: 64px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 27.586206896551722% 99.56481481481481%
     }
 
 .icon--instagram {
         width: 42.01px;
         height: 42.01px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 63.2917018534157% 49.234556504346486%
     }
 
 .icon--mail {
         width: 64px;
         height: 48px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 0 48.00806451612903%
     }
 
 .icon--rain {
         width: 64px;
         height: 64px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 99.70443349753694% 59.25925925925926%
     }
 
 .icon--star {
         width: 64px;
         height: 64px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 59.11330049261084% 99.56481481481481%
     }
 
 .icon--twitter {
         width: 51.78px;
         height: 42.06px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 94.04330452560171% 98.50700323226104%
     }
 
 .icon--wifi {
         width: 60px;
         height: 64px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 68.79227053140097% 0
     }
 
 .icon--youtube {
         width: 34.75px;
         height: 42px;
-        background-image: url('/temp/sprite/css/svg/sprite.css-d675eadb.svg');
         background-position: 36.69752421959096% 45.792307692307695%
+    }
+
+.section-title{
+    font-size: 2.55rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+@media (min-width: 530px){
+
+.section-title{
+        font-size: 3.75rem
+}
+    }
+
+.section-title strong {
+        font-weight: 500;
+    }
+
+.section-title__icon {
+        display: block;
+        margin: auto;
+        margin-bottom: 1rem;
+
+    }
+
+@media (min-width: 530px){
+
+.section-title__icon {
+            margin-right: .5rem;
+            margin-left: 0;
+            margin-bottom: 0;
+            display: inline-block
+
+    }
+    }
+
+@media (min-width: 530px){
+
+.feature-item{
+        position: relative;
+        padding-left: 94px;
+        padding-bottom: 2.5rem
+}
+    }
+
+.feature-item__icon {
+        display: block;
+        margin: auto;
+    }
+
+@media (min-width: 530px){
+
+.feature-item__icon {
+            position: absolute;
+            left: 10px
+    }
+    }
+
+.feature-item__title {
+        font-size: 1.6rem;
+        text-align: center;
+        font-weight: 300;
+        margin-top: .7rem;
+        margin-bottom: .8rem;
+
+    }
+
+@media (min-width: 530px){
+
+.feature-item__title {
+            font-size: 1.875rem;
+            text-align: left
+
+    }
     }
